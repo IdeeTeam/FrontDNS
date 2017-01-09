@@ -53,7 +53,8 @@ namespace ClientAppDNS
             string postData = "{ \"url\" : \""
                 + GlobalPOCO.username + "."
                 + tbURL.Text + "\", \"ip\" : \""
-                + GlobalPOCO.ipAddress + "\" }";
+                + GlobalPOCO.ipAddress + "\", \"username\" : \""
+                + GlobalPOCO.username + "\" }";
 
             var data = Encoding.UTF8.GetBytes(postData);
 
