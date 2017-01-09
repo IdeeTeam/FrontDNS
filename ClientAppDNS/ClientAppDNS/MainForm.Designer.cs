@@ -30,6 +30,10 @@
         {
             this.bStart = new System.Windows.Forms.Button();
             this.bStop = new System.Windows.Forms.Button();
+            this.tbURL = new System.Windows.Forms.TextBox();
+            this.lURL = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lIP = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // bStart
@@ -53,16 +57,56 @@
             this.bStop.UseVisualStyleBackColor = true;
             this.bStop.Click += new System.EventHandler(this.bStop_Click);
             // 
+            // tbURL
+            // 
+            this.tbURL.Location = new System.Drawing.Point(12, 97);
+            this.tbURL.Name = "tbURL";
+            this.tbURL.Size = new System.Drawing.Size(154, 20);
+            this.tbURL.TabIndex = 2;
+            // 
+            // lURL
+            // 
+            this.lURL.AutoSize = true;
+            this.lURL.Location = new System.Drawing.Point(12, 81);
+            this.lURL.Name = "lURL";
+            this.lURL.Size = new System.Drawing.Size(84, 13);
+            this.lURL.TabIndex = 3;
+            this.lURL.Text = "Enter URL here:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(131, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Your current IP address is:";
+            // 
+            // lIP
+            // 
+            this.lIP.AutoSize = true;
+            this.lIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lIP.Location = new System.Drawing.Point(12, 44);
+            this.lIP.Name = "lIP";
+            this.lIP.Size = new System.Drawing.Size(155, 20);
+            this.lIP.TabIndex = 5;
+            this.lIP.Text = "No information yet";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(181, 224);
+            this.Controls.Add(this.lIP);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lURL);
+            this.Controls.Add(this.tbURL);
             this.Controls.Add(this.bStop);
             this.Controls.Add(this.bStart);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -70,5 +114,9 @@
 
         private System.Windows.Forms.Button bStart;
         private System.Windows.Forms.Button bStop;
+        private System.Windows.Forms.TextBox tbURL;
+        private System.Windows.Forms.Label lURL;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lIP;
     }
 }

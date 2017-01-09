@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ClientAppDNS
 {
-    class IPFromJson
+    class TokenFromJson
     {
-        public string ip { get; set; }
+        public string token { get; set; }
     }
 }

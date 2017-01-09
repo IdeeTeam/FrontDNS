@@ -9,5 +9,9 @@ namespace ClientAppDNS
     public static class GlobalPOCO
     {
         public static string token = null;
+        public static string username = null;
+        public static string ipAddress = null;
+        public static bool customIP = false;
     }
+
 }
