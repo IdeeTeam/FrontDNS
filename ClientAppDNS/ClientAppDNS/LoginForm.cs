@@ -66,25 +66,33 @@ namespace ClientAppDNS
             }
             catch (WebException ex)
             {
-                var status = ((HttpWebResponse)ex.Response).StatusCode;
-                if (status == HttpStatusCode.Forbidden)
+                if (ex.Response != null)
                 {
-                    MessageBox.Show("Invalid credentials supplied");
+                    var status = ((HttpWebResponse)ex.Response).StatusCode;
+                    if (status == HttpStatusCode.Forbidden)
+                    {
+                        MessageBox.Show("Invalid credentials supplied");
+                    }
+                    else if (status == HttpStatusCode.BadRequest)
+                    {
+                        MessageBox.Show("Unsuccessful login");
+                    }
+                    else if (status == HttpStatusCode.NotFound)
+                    {
+                        MessageBox.Show("Not found");
+                    }
+                    else if (status == HttpStatusCode.InternalServerError)
+                    {
+                        MessageBox.Show("Server error");
+                    }
+                    else
+                    {
+                        MessageBox.Show("An error occured while connecting to server");
+                    }
                 }
-                else if (status == HttpStatusCode.BadRequest)
+                else
                 {
-                    MessageBox.Show("Unsuccessful login");
-                }
-                else if (status == HttpStatusCode.NotFound)
-                {
-                    MessageBox.Show("Not found");
-                }
-                else if (status == HttpStatusCode.InternalServerError)
-                {
-                    MessageBox.Show("Server error");
-                }
-                else {
-                    MessageBox.Show("An error occured while connecting to server");
+                    MessageBox.Show("Connection unsuccessful");
                 }
                 
             }
@@ -129,27 +137,35 @@ namespace ClientAppDNS
             }
             catch (WebException ex)
             {
-                var status = ((HttpWebResponse)ex.Response).StatusCode;
-                if (status == HttpStatusCode.Forbidden)
+                if (ex.Response != null)
                 {
-                    MessageBox.Show("Invalid credentials supplied");
-                }
-                else if (status == HttpStatusCode.BadRequest)
-                {
-                    MessageBox.Show("Invalid data supplied");
-                }
-                else if (status == HttpStatusCode.NotFound)
-                {
-                    MessageBox.Show("Not found");
-                }
-                else if (status == HttpStatusCode.InternalServerError)
-                {
-                    MessageBox.Show("Server error");
+                    var status = ((HttpWebResponse)ex.Response).StatusCode;
+                    if (status == HttpStatusCode.Forbidden)
+                    {
+                        MessageBox.Show("Invalid credentials supplied");
+                    }
+                    else if (status == HttpStatusCode.BadRequest)
+                    {
+                        MessageBox.Show("Invalid data supplied");
+                    }
+                    else if (status == HttpStatusCode.NotFound)
+                    {
+                        MessageBox.Show("Not found");
+                    }
+                    else if (status == HttpStatusCode.InternalServerError)
+                    {
+                        MessageBox.Show("Server error");
+                    }
+                    else
+                    {
+                        MessageBox.Show("An error occured while connecting to server");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("An error occured while connecting to server");
+                    MessageBox.Show("Connection unsuccessful");
                 }
+                
 
             }
         }

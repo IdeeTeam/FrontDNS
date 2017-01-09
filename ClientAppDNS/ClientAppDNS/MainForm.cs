@@ -106,28 +106,35 @@ namespace ClientAppDNS
                 {
                     bStart.Enabled = true;
                 }
-
-                var status = ((HttpWebResponse)ex.Response).StatusCode;
-                if (status == HttpStatusCode.Forbidden)
+                if (ex.Response != null)
                 {
-                    MessageBox.Show("Invalid credentials supplied");
-                }
-                else if (status == HttpStatusCode.BadRequest)
-                {
-                    MessageBox.Show("Invalid data supplied");
-                }
-                else if (status == HttpStatusCode.NotFound)
-                {
-                    MessageBox.Show("Not found");
-                }
-                else if (status == HttpStatusCode.InternalServerError)
-                {
-                    MessageBox.Show("Server error");
+                    var status = ((HttpWebResponse)ex.Response).StatusCode;
+                    if (status == HttpStatusCode.Forbidden)
+                    {
+                        MessageBox.Show("Invalid credentials supplied");
+                    }
+                    else if (status == HttpStatusCode.BadRequest)
+                    {
+                        MessageBox.Show("Invalid data supplied");
+                    }
+                    else if (status == HttpStatusCode.NotFound)
+                    {
+                        MessageBox.Show("Not found");
+                    }
+                    else if (status == HttpStatusCode.InternalServerError)
+                    {
+                        MessageBox.Show("Server error");
+                    }
+                    else
+                    {
+                        MessageBox.Show("An error occured while connecting to server");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("An error occured while connecting to server");
+                    MessageBox.Show("Connection unsuccessful");
                 }
+                
 
             }
         }
@@ -136,28 +143,63 @@ namespace ClientAppDNS
         {
             var ipRequest = WebRequest.CreateHttp("https://api.ipify.org?format=json");
             ipRequest.Method = "GET";
-
-            using (var ipResponse = ipRequest.GetResponse())
+            try
             {
-                var dataStream = ipResponse.GetResponseStream();
-
-                StreamReader reader = new StreamReader(dataStream);
-                object objResponse = reader.ReadToEnd();
-                var ipAddress = JsonConvert.DeserializeObject<IPFromJson>(objResponse.ToString());
-                Console.WriteLine(ipAddress.ip);
-                if (lIP.InvokeRequired)
+                using (var ipResponse = ipRequest.GetResponse())
                 {
-                    lIP.BeginInvoke(new Action(() =>
+                    var dataStream = ipResponse.GetResponseStream();
+
+                    StreamReader reader = new StreamReader(dataStream);
+                    object objResponse = reader.ReadToEnd();
+                    var ipAddress = JsonConvert.DeserializeObject<IPFromJson>(objResponse.ToString());
+                    Console.WriteLine(ipAddress.ip);
+                    if (lIP.InvokeRequired)
+                    {
+                        lIP.BeginInvoke(new Action(() =>
+                        {
+                            GlobalPOCO.ipAddress = ipAddress.ip;
+                            lIP.Text = ipAddress.ip;
+                        }));
+                    }
+                    else
                     {
                         GlobalPOCO.ipAddress = ipAddress.ip;
                         lIP.Text = ipAddress.ip;
-                    }));
+                    }
+                }
+            }
+            catch (WebException ex)
+            {
+                if (ex.Response != null)
+                {
+                    var status = ((HttpWebResponse)ex.Response).StatusCode;
+                    if (status == HttpStatusCode.Forbidden)
+                    {
+                        MessageBox.Show("Invalid credentials supplied");
+                    }
+                    else if (status == HttpStatusCode.BadRequest)
+                    {
+                        MessageBox.Show("Invalid data supplied");
+                    }
+                    else if (status == HttpStatusCode.NotFound)
+                    {
+                        MessageBox.Show("Not found");
+                    }
+                    else if (status == HttpStatusCode.InternalServerError)
+                    {
+                        MessageBox.Show("Server error");
+                    }
+                    else
+                    {
+                        MessageBox.Show("An error occured while connecting to server");
+                    }
                 }
                 else
                 {
-                    GlobalPOCO.ipAddress = ipAddress.ip;
-                    lIP.Text = ipAddress.ip;
+                    MessageBox.Show("Connection unsuccessful");
                 }
+
+
             }
         }
 
