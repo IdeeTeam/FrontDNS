@@ -26,7 +26,7 @@ namespace ClientAppDNS
             InitializeComponent();
 
             t = new System.Windows.Forms.Timer();
-            t.Interval = 2000;//1000000;
+            t.Interval = 15000;//1000000;
             t.Tick += t_Tick;
         }
 
@@ -46,14 +46,13 @@ namespace ClientAppDNS
 
         private void serverCheckIn()
         {
-            if (!GlobalPOCO.customIP)
-            {
-                getIP();
-            }
+            //if (!GlobalPOCO.customIP)
+            //{
+            //    getIP();
+            //}
             string postData = "{ \"url\" : \""
-                + GlobalPOCO.username + "."
-                + tbURL.Text + "\", \"ip\" : \""
-                + GlobalPOCO.ipAddress + "\", \"username\" : \""
+                + tbURL.Text + "\","
+                + " \"username\" : \""
                 + GlobalPOCO.username + "\" }";
 
             var data = Encoding.UTF8.GetBytes(postData);

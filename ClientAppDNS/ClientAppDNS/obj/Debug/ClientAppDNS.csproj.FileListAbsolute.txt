@@ -22,3 +22,15 @@ C:\Users\Ivan\Documents\GitHub\FrontDNS\ClientAppDNS\ClientAppDNS\obj\Debug\Clie
 C:\Users\Ivan\Documents\GitHub\FrontDNS\ClientAppDNS\ClientAppDNS\obj\Debug\ClientAppDNS.MainForm.resources
 C:\Users\Ivan\Documents\GitHub\FrontDNS\ClientAppDNS\ClientAppDNS\obj\Debug\ClientAppDNS.Properties.Resources.resources
 C:\Users\Ivan\Documents\GitHub\FrontDNS\ClientAppDNS\ClientAppDNS\obj\Debug\ClientAppDNS.csproj.GenerateResource.Cache
+E:\Git\FrontDNS\ClientAppDNS\ClientAppDNS\bin\Debug\ClientAppDNS.exe.config
+E:\Git\FrontDNS\ClientAppDNS\ClientAppDNS\obj\Debug\ClientAppDNS.exe
+E:\Git\FrontDNS\ClientAppDNS\ClientAppDNS\obj\Debug\ClientAppDNS.pdb
+E:\Git\FrontDNS\ClientAppDNS\ClientAppDNS\bin\Debug\ClientAppDNS.exe
+E:\Git\FrontDNS\ClientAppDNS\ClientAppDNS\bin\Debug\ClientAppDNS.pdb
+E:\Git\FrontDNS\ClientAppDNS\ClientAppDNS\bin\Debug\Newtonsoft.Json.dll
+E:\Git\FrontDNS\ClientAppDNS\ClientAppDNS\bin\Debug\Newtonsoft.Json.xml
+E:\Git\FrontDNS\ClientAppDNS\ClientAppDNS\obj\Debug\ClientAppDNS.csprojResolveAssemblyReference.cache
+E:\Git\FrontDNS\ClientAppDNS\ClientAppDNS\obj\Debug\ClientAppDNS.LoginForm.resources
+E:\Git\FrontDNS\ClientAppDNS\ClientAppDNS\obj\Debug\ClientAppDNS.MainForm.resources
+E:\Git\FrontDNS\ClientAppDNS\ClientAppDNS\obj\Debug\ClientAppDNS.Properties.Resources.resources
+E:\Git\FrontDNS\ClientAppDNS\ClientAppDNS\obj\Debug\ClientAppDNS.csproj.GenerateResource.Cache
