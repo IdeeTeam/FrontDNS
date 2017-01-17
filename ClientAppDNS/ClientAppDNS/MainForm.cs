@@ -25,6 +25,8 @@ namespace ClientAppDNS
         {
             InitializeComponent();
 
+            lURLEnd.Text = "." + GlobalPOCO.username + ".idee.com";
+
             t = new System.Windows.Forms.Timer();
             t.Interval = 15000;//1000000;
             t.Tick += t_Tick;
