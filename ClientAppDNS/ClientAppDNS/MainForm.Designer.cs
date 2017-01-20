@@ -39,7 +39,7 @@
             // 
             // bStart
             // 
-            this.bStart.Location = new System.Drawing.Point(12, 141);
+            this.bStart.Location = new System.Drawing.Point(9, 51);
             this.bStart.Name = "bStart";
             this.bStart.Size = new System.Drawing.Size(155, 23);
             this.bStart.TabIndex = 0;
@@ -50,7 +50,7 @@
             // bStop
             // 
             this.bStop.Enabled = false;
-            this.bStop.Location = new System.Drawing.Point(13, 171);
+            this.bStop.Location = new System.Drawing.Point(9, 80);
             this.bStop.Name = "bStop";
             this.bStop.Size = new System.Drawing.Size(154, 23);
             this.bStop.TabIndex = 1;
@@ -60,7 +60,7 @@
             // 
             // tbURL
             // 
-            this.tbURL.Location = new System.Drawing.Point(12, 97);
+            this.tbURL.Location = new System.Drawing.Point(9, 25);
             this.tbURL.Name = "tbURL";
             this.tbURL.Size = new System.Drawing.Size(84, 20);
             this.tbURL.TabIndex = 2;
@@ -68,7 +68,7 @@
             // lURL
             // 
             this.lURL.AutoSize = true;
-            this.lURL.Location = new System.Drawing.Point(12, 81);
+            this.lURL.Location = new System.Drawing.Point(9, 9);
             this.lURL.Name = "lURL";
             this.lURL.Size = new System.Drawing.Size(84, 13);
             this.lURL.TabIndex = 3;
@@ -77,26 +77,28 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 13);
+            this.label1.Location = new System.Drawing.Point(24, 111);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(131, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Your current IP address is:";
+            this.label1.Visible = false;
             // 
             // lIP
             // 
             this.lIP.AutoSize = true;
             this.lIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lIP.Location = new System.Drawing.Point(12, 44);
+            this.lIP.Location = new System.Drawing.Point(14, 106);
             this.lIP.Name = "lIP";
             this.lIP.Size = new System.Drawing.Size(155, 20);
             this.lIP.TabIndex = 5;
             this.lIP.Text = "No information yet";
+            this.lIP.Visible = false;
             // 
             // lURLEnd
             // 
             this.lURLEnd.AutoSize = true;
-            this.lURLEnd.Location = new System.Drawing.Point(102, 100);
+            this.lURLEnd.Location = new System.Drawing.Point(99, 28);
             this.lURLEnd.Name = "lURLEnd";
             this.lURLEnd.Size = new System.Drawing.Size(53, 13);
             this.lURLEnd.TabIndex = 6;
@@ -106,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(181, 224);
+            this.ClientSize = new System.Drawing.Size(181, 122);
             this.Controls.Add(this.lURLEnd);
             this.Controls.Add(this.lIP);
             this.Controls.Add(this.label1);
@@ -114,8 +116,9 @@
             this.Controls.Add(this.tbURL);
             this.Controls.Add(this.bStop);
             this.Controls.Add(this.bStart);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "Check in";
             this.ResumeLayout(false);
             this.PerformLayout();
 
