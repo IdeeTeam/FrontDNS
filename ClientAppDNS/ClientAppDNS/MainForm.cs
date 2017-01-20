@@ -140,6 +140,8 @@ namespace ClientAppDNS
             }
         }
 
+
+        //test funkcija, nikad se ne koristi
         private void getIP()
         {
             var ipRequest = WebRequest.CreateHttp("https://api.ipify.org?format=json");
